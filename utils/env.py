@@ -1,4 +1,8 @@
 import gym
+import sys
+
+sys.path.append('/Users/srahmoun/Documents/Thesis/dio/')
+
 import gym_minigrid
 
 

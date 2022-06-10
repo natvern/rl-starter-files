@@ -66,12 +66,15 @@ if __name__ == '__main__':
     obss = env.reset()
 
     log_done_counter = 0
+    suc = 0
+    failure = 0
+    exhaust = 0
     log_episode_return = torch.zeros(args.procs, device=device)
     log_episode_num_frames = torch.zeros(args.procs, device=device)
 
     while log_done_counter < args.episodes:
         actions = agent.get_actions(obss)
-        obss, rewards, dones, _ = env.step(actions)
+        (obss, rewards, dones, _) = env.step(actions)
         agent.analyze_feedbacks(rewards, dones)
 
         log_episode_return += torch.tensor(rewards, device=device, dtype=torch.float)
@@ -80,6 +83,12 @@ if __name__ == '__main__':
         for i, done in enumerate(dones):
             if done:
                 log_done_counter += 1
+                if (log_episode_return[i] > 0):
+                    suc += 1
+                if (log_episode_num_frames[i].item() >= 100):
+                    exhaust += 1
+                elif (log_episode_return[i].item() < 0):
+                    failure += 1
                 logs["return_per_episode"].append(log_episode_return[i].item())
                 logs["num_frames_per_episode"].append(log_episode_num_frames[i].item())
 
@@ -111,3 +120,10 @@ if __name__ == '__main__':
         indexes = sorted(range(len(logs["return_per_episode"])), key=lambda k: logs["return_per_episode"][k])
         for i in indexes[:n]:
             print("- episode {}: R={}, F={}".format(i, logs["return_per_episode"][i], logs["num_frames_per_episode"][i]))
+    
+    print("\n Failure " + str(failure)) 
+    print("\n Percentage: " + str(failure / args.episodes)) 
+    print("\n Exhaust " + str(exhaust)) 
+    print("\n Percentage: " + str(exhaust / args.episodes)) 
+    print("\n Success " + str(suc)) 
+    print("\n Percentage: " + str(suc / args.episodes)) 
