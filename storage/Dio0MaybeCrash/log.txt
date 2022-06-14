@@ -1,0 +1,1857 @@
+/Users/srahmoun/Documents/Thesis/dio/rl-starter-files/scripts/train.py --env MiniGrid-ProbGrid-8x8-v0 --model Dio0MaybeCrash --algo ppo --save-interval 10 --frames 8000
+
+Namespace(algo='ppo', env='MiniGrid-ProbGrid-8x8-v0', model='Dio0MaybeCrash', seed=1, log_interval=1, save_interval=10, procs=16, frames=8000, epochs=4, batch_size=256, frames_per_proc=None, discount=0.99, lr=0.001, gae_lambda=0.95, entropy_coef=0.01, value_loss_coef=0.5, max_grad_norm=0.5, optim_eps=1e-08, optim_alpha=0.99, clip_eps=0.2, recurrence=1, text=False, mem=False)
+
+Device: cpu
+
+Environments loaded
+
+Training status loaded
+
+Observations preprocessor loaded
+Model loaded
+
+ACModel(
+  (image_conv): Sequential(
+    (0): Conv2d(3, 16, kernel_size=(2, 2), stride=(1, 1))
+    (1): ReLU()
+    (2): MaxPool2d(kernel_size=(2, 2), stride=(2, 2), padding=0, dilation=1, ceil_mode=False)
+    (3): Conv2d(16, 32, kernel_size=(2, 2), stride=(1, 1))
+    (4): ReLU()
+    (5): Conv2d(32, 64, kernel_size=(2, 2), stride=(1, 1))
+    (6): ReLU()
+  )
+  (actor): Sequential(
+    (0): Linear(in_features=64, out_features=64, bias=True)
+    (1): Tanh()
+    (2): Linear(in_features=64, out_features=3, bias=True)
+  )
+  (critic): Sequential(
+    (0): Linear(in_features=64, out_features=64, bias=True)
+    (1): Tanh()
+    (2): Linear(in_features=64, out_features=1, bias=True)
+  )
+)
+
+Optimizer loaded
+
+Grounding: 0.0162s
+Cycle breaking: 0.0002s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0822s
+Grounding: 0.0158s
+Cycle breaking: 0.0001s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0379s
+Grounding: 0.0218s
+Cycle breaking: 0.0001s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0334s
+Grounding: 0.0053s
+Cycle breaking: 0.0001s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0356s
+Grounding: 0.0135s
+Cycle breaking: 0.0004s
+Clark's completion: 0.0001s
+DSharp compilation: 0.0261s
+Grounding: 0.0185s
+Cycle breaking: 0.0004s
+Clark's completion: 0.0001s
+DSharp compilation: 0.0441s
+Grounding: 0.0070s
+Cycle breaking: 0.0001s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0132s
+Grounding: 0.0053s
+Cycle breaking: 0.0001s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0171s
+Grounding: 0.0105s
+Cycle breaking: 0.0001s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0193s
+Grounding: 0.0108s
+Cycle breaking: 0.0003s
+Clark's completion: 0.0002s
+DSharp compilation: 0.0205s
+Grounding: 0.0141s
+Cycle breaking: 0.0007s
+Clark's completion: 0.0001s
+DSharp compilation: 0.0278s
+Grounding: 0.0182s
+Cycle breaking: 0.0005s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0159s
+Grounding: 0.0054s
+Cycle breaking: 0.0001s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0177s
+Grounding: 0.0160s
+Cycle breaking: 0.0001s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0674s
+Grounding: 0.0157s
+Cycle breaking: 0.0003s
+Clark's completion: 0.0009s
+DSharp compilation: 0.0202s
+Grounding: 0.0106s
+Cycle breaking: 0.0007s
+Clark's completion: 0.0001s
+DSharp compilation: 0.0170s
+Grounding: 0.0094s
+Cycle breaking: 0.0004s
+Clark's completion: 0.0001s
+DSharp compilation: 0.0622s
+Grounding: 0.0112s
+Cycle breaking: 0.0003s
+Clark's completion: 0.0001s
+DSharp compilation: 0.0266s
+Grounding: 0.0207s
+Cycle breaking: 0.0008s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0298s
+Grounding: 0.0823s
+Cycle breaking: 0.0007s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0181s
+Grounding: 0.0122s
+Cycle breaking: 0.0004s
+Clark's completion: 0.0001s
+DSharp compilation: 0.0502s
+Grounding: 0.0176s
+Cycle breaking: 0.0002s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0384s
+Grounding: 0.0176s
+Cycle breaking: 0.0001s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0683s
+Grounding: 0.0064s
+Cycle breaking: 0.0002s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0158s
+Grounding: 0.0141s
+Cycle breaking: 0.0006s
+Clark's completion: 0.0001s
+DSharp compilation: 0.0137s
+Grounding: 0.0206s
+Cycle breaking: 0.0007s
+Clark's completion: 0.0001s
+DSharp compilation: 0.0266s
+Grounding: 0.0210s
+Cycle breaking: 0.0001s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0506s
+Grounding: 0.0227s
+Cycle breaking: 0.0001s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0137s
+Grounding: 0.0148s
+Cycle breaking: 0.0004s
+Clark's completion: 0.0002s
+DSharp compilation: 0.0450s
+Grounding: 0.0264s
+Cycle breaking: 0.0011s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0203s
+Grounding: 0.0161s
+Cycle breaking: 0.0001s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0651s
+Grounding: 0.0215s
+Cycle breaking: 0.0002s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0148s
+Grounding: 0.0203s
+Cycle breaking: 0.0001s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0240s
+Grounding: 0.0108s
+Cycle breaking: 0.0017s
+Clark's completion: 0.0001s
+DSharp compilation: 0.0189s
+Grounding: 0.0219s
+Cycle breaking: 0.0005s
+Clark's completion: 0.0010s
+DSharp compilation: 0.0186s
+Grounding: 0.0233s
+Cycle breaking: 0.0002s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0213s
+Grounding: 0.0142s
+Cycle breaking: 0.0001s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0476s
+Grounding: 0.0180s
+Cycle breaking: 0.0013s
+Clark's completion: 0.0001s
+DSharp compilation: 0.0719s
+Grounding: 0.0264s
+Cycle breaking: 0.0001s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0408s
+Grounding: 0.0180s
+Cycle breaking: 0.0002s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0565s
+Grounding: 0.0287s
+Cycle breaking: 0.0005s
+Clark's completion: 0.0001s
+DSharp compilation: 0.0680s
+Grounding: 0.0590s
+Cycle breaking: 0.0002s
+Clark's completion: 0.0001s
+DSharp compilation: 0.0158s
+Grounding: 0.0112s
+Cycle breaking: 0.0001s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0483s
+Grounding: 0.0254s
+Cycle breaking: 0.0001s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0185s
+Grounding: 0.0128s
+Cycle breaking: 0.0007s
+Clark's completion: 0.0001s
+DSharp compilation: 0.0136s
+Grounding: 0.0220s
+Cycle breaking: 0.0001s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0181s
+Grounding: 0.0053s
+Cycle breaking: 0.0002s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0165s
+Grounding: 0.0230s
+Cycle breaking: 0.0002s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0132s
+Grounding: 0.0122s
+Cycle breaking: 0.0004s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0141s
+Grounding: 0.0343s
+Cycle breaking: 0.0020s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0139s
+Grounding: 0.0209s
+Cycle breaking: 0.0001s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0221s
+Grounding: 0.0250s
+Cycle breaking: 0.0001s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0422s
+Grounding: 0.0301s
+Cycle breaking: 0.0004s
+Clark's completion: 0.0001s
+DSharp compilation: 0.0428s
+Grounding: 0.0157s
+Cycle breaking: 0.0001s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0151s
+Grounding: 0.0184s
+Cycle breaking: 0.0001s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0171s
+Grounding: 0.0261s
+Cycle breaking: 0.0001s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0222s
+Grounding: 0.0307s
+Cycle breaking: 0.0003s
+Clark's completion: 0.0001s
+DSharp compilation: 0.0152s
+Grounding: 0.0100s
+Cycle breaking: 0.0004s
+Clark's completion: 0.0001s
+DSharp compilation: 0.0511s
+Grounding: 0.0102s
+Cycle breaking: 0.0002s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0176s
+Grounding: 0.0087s
+Cycle breaking: 0.0001s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0151s
+Grounding: 0.0212s
+Cycle breaking: 0.0004s
+Clark's completion: 0.0001s
+DSharp compilation: 0.0651s
+Grounding: 0.0168s
+Cycle breaking: 0.0001s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0299s
+Grounding: 0.0131s
+Cycle breaking: 0.0004s
+Clark's completion: 0.0001s
+DSharp compilation: 0.0197s
+Grounding: 0.0059s
+Cycle breaking: 0.0001s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0239s
+Grounding: 0.0836s
+Cycle breaking: 0.0001s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0122s
+Grounding: 0.0433s
+Cycle breaking: 0.0001s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0219s
+Grounding: 0.0115s
+Cycle breaking: 0.0005s
+Clark's completion: 0.0001s
+DSharp compilation: 0.0618s
+Grounding: 0.0411s
+Cycle breaking: 0.0001s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0180s
+Grounding: 0.0150s
+Cycle breaking: 0.0001s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0233s
+Grounding: 0.0237s
+Cycle breaking: 0.0002s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0347s
+Grounding: 0.0072s
+Cycle breaking: 0.0001s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0175s
+Grounding: 0.0293s
+Cycle breaking: 0.0002s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0195s
+Grounding: 0.0177s
+Cycle breaking: 0.0001s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0245s
+Grounding: 0.0053s
+Cycle breaking: 0.0002s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0142s
+Grounding: 0.0109s
+Cycle breaking: 0.0004s
+Clark's completion: 0.0002s
+DSharp compilation: 0.0251s
+Grounding: 0.0062s
+Cycle breaking: 0.0001s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0439s
+Grounding: 0.0199s
+Cycle breaking: 0.0001s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0555s
+Grounding: 0.0064s
+Cycle breaking: 0.0002s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0235s
+Grounding: 0.0074s
+Cycle breaking: 0.0001s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0357s
+Grounding: 0.0228s
+Cycle breaking: 0.0004s
+Clark's completion: 0.0001s
+DSharp compilation: 0.0482s
+Grounding: 0.0073s
+Cycle breaking: 0.0001s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0219s
+Grounding: 0.0132s
+Cycle breaking: 0.0001s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0131s
+Grounding: 0.0116s
+Cycle breaking: 0.0004s
+Clark's completion: 0.0001s
+DSharp compilation: 0.0452s
+Grounding: 0.0100s
+Cycle breaking: 0.0005s
+Clark's completion: 0.0001s
+DSharp compilation: 0.0534s
+Grounding: 0.0059s
+Cycle breaking: 0.0001s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0192s
+Grounding: 0.0212s
+Cycle breaking: 0.0001s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0279s
+Grounding: 0.0557s
+Cycle breaking: 0.0003s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0140s
+Grounding: 0.0125s
+Cycle breaking: 0.0004s
+Clark's completion: 0.0001s
+DSharp compilation: 0.0680s
+Grounding: 0.0166s
+Cycle breaking: 0.0001s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0215s
+Grounding: 0.0542s
+Cycle breaking: 0.0002s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0209s
+Grounding: 0.0102s
+Cycle breaking: 0.0001s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0323s
+Grounding: 0.0519s
+Cycle breaking: 0.0002s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0199s
+Grounding: 0.0347s
+Cycle breaking: 0.0001s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0177s
+Grounding: 0.0056s
+Cycle breaking: 0.0001s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0712s
+Grounding: 0.0232s
+Cycle breaking: 0.0001s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0190s
+Grounding: 0.0209s
+Cycle breaking: 0.0011s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0236s
+Grounding: 0.0142s
+Cycle breaking: 0.0003s
+Clark's completion: 0.0001s
+DSharp compilation: 0.0367s
+Grounding: 0.0121s
+Cycle breaking: 0.0002s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0351s
+Grounding: 0.0165s
+Cycle breaking: 0.0003s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0217s
+Grounding: 0.0114s
+Cycle breaking: 0.0005s
+Clark's completion: 0.0001s
+DSharp compilation: 0.0317s
+Grounding: 0.0148s
+Cycle breaking: 0.0001s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0735s
+Grounding: 0.0496s
+Cycle breaking: 0.0050s
+Clark's completion: 0.0001s
+DSharp compilation: 0.0160s
+Grounding: 0.0541s
+Cycle breaking: 0.0002s
+Clark's completion: 0.0008s
+DSharp compilation: 0.0155s
+Grounding: 0.0096s
+Cycle breaking: 0.0004s
+Clark's completion: 0.0001s
+DSharp compilation: 0.0418s
+Grounding: 0.0184s
+Cycle breaking: 0.0002s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0270s
+Grounding: 0.0139s
+Cycle breaking: 0.0007s
+Clark's completion: 0.0001s
+DSharp compilation: 0.0169s
+Grounding: 0.0109s
+Cycle breaking: 0.0004s
+Clark's completion: 0.0001s
+DSharp compilation: 0.0527s
+Grounding: 0.0061s
+Cycle breaking: 0.0002s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0202s
+Grounding: 0.0665s
+Cycle breaking: 0.0001s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0126s
+Grounding: 0.0250s
+Cycle breaking: 0.0006s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0209s
+U 1 | F 002048 | FPS 0168 | D 12 | rR:μσmM -1.23 0.65 -3.81 0.15 | F:μσmM 7.4 6.8 1.0 54.0 | H 1.087 | V -0.507 | pL 0.664 | vL 0.472 | ∇ 0.306
+Grounding: 0.0082s
+Cycle breaking: 0.0001s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0281s
+Grounding: 0.0103s
+Cycle breaking: 0.0001s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0137s
+Grounding: 0.0265s
+Cycle breaking: 0.0002s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0197s
+Grounding: 0.0102s
+Cycle breaking: 0.0001s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0188s
+Grounding: 0.0158s
+Cycle breaking: 0.0001s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0194s
+Grounding: 0.0243s
+Cycle breaking: 0.0001s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0474s
+Grounding: 0.0162s
+Cycle breaking: 0.0003s
+Clark's completion: 0.0001s
+DSharp compilation: 0.0191s
+Grounding: 0.0253s
+Cycle breaking: 0.0002s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0175s
+Grounding: 0.0625s
+Cycle breaking: 0.0003s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0145s
+Grounding: 0.0207s
+Cycle breaking: 0.0001s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0252s
+Grounding: 0.0247s
+Cycle breaking: 0.0002s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0149s
+Grounding: 0.0146s
+Cycle breaking: 0.0004s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0370s
+Grounding: 0.0201s
+Cycle breaking: 0.0001s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0146s
+Grounding: 0.0301s
+Cycle breaking: 0.0001s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0207s
+Grounding: 0.0282s
+Cycle breaking: 0.0003s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0491s
+Grounding: 0.0108s
+Cycle breaking: 0.0005s
+Clark's completion: 0.0001s
+DSharp compilation: 0.0174s
+Grounding: 0.0160s
+Cycle breaking: 0.0001s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0500s
+Grounding: 0.0175s
+Cycle breaking: 0.0003s
+Clark's completion: 0.0001s
+DSharp compilation: 0.0302s
+Grounding: 0.0146s
+Cycle breaking: 0.0001s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0177s
+Grounding: 0.0110s
+Cycle breaking: 0.0004s
+Clark's completion: 0.0001s
+DSharp compilation: 0.0475s
+Grounding: 0.0173s
+Cycle breaking: 0.0012s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0147s
+Grounding: 0.0609s
+Cycle breaking: 0.0001s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0136s
+Grounding: 0.0124s
+Cycle breaking: 0.0001s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0166s
+Grounding: 0.0557s
+Cycle breaking: 0.0004s
+Clark's completion: 0.0001s
+DSharp compilation: 0.0160s
+Grounding: 0.0163s
+Cycle breaking: 0.0004s
+Clark's completion: 0.0001s
+DSharp compilation: 0.0544s
+Grounding: 0.0300s
+Cycle breaking: 0.0001s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0177s
+Grounding: 0.0120s
+Cycle breaking: 0.0001s
+Clark's completion: 0.0011s
+DSharp compilation: 0.0183s
+Grounding: 0.0098s
+Cycle breaking: 0.0001s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0211s
+Grounding: 0.0092s
+Cycle breaking: 0.0001s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0132s
+Grounding: 0.0178s
+Cycle breaking: 0.0003s
+Clark's completion: 0.0001s
+DSharp compilation: 0.0216s
+Grounding: 0.0054s
+Cycle breaking: 0.0001s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0217s
+Grounding: 0.0114s
+Cycle breaking: 0.0001s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0186s
+Grounding: 0.0227s
+Cycle breaking: 0.0002s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0186s
+Grounding: 0.0207s
+Cycle breaking: 0.0001s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0135s
+Grounding: 0.0225s
+Cycle breaking: 0.0003s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0221s
+Grounding: 0.0207s
+Cycle breaking: 0.0001s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0268s
+Grounding: 0.0149s
+Cycle breaking: 0.0002s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0201s
+Grounding: 0.0052s
+Cycle breaking: 0.0001s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0428s
+Grounding: 0.0109s
+Cycle breaking: 0.0006s
+Clark's completion: 0.0001s
+DSharp compilation: 0.0850s
+Grounding: 0.0178s
+Cycle breaking: 0.0001s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0207s
+Grounding: 0.0143s
+Cycle breaking: 0.0005s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0153s
+Grounding: 0.0135s
+Cycle breaking: 0.0004s
+Clark's completion: 0.0001s
+DSharp compilation: 0.0346s
+Grounding: 0.0346s
+Cycle breaking: 0.0003s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0194s
+Grounding: 0.0254s
+Cycle breaking: 0.0001s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0178s
+Grounding: 0.0660s
+Cycle breaking: 0.0002s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0127s
+Grounding: 0.0164s
+Cycle breaking: 0.0004s
+Clark's completion: 0.0001s
+DSharp compilation: 0.0405s
+Grounding: 0.0050s
+Cycle breaking: 0.0002s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0507s
+Grounding: 0.0296s
+Cycle breaking: 0.0002s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0176s
+Grounding: 0.0092s
+Cycle breaking: 0.0002s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0218s
+Grounding: 0.0102s
+Cycle breaking: 0.0001s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0485s
+Grounding: 0.0205s
+Cycle breaking: 0.0007s
+Clark's completion: 0.0002s
+DSharp compilation: 0.0129s
+Grounding: 0.0468s
+Cycle breaking: 0.0001s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0156s
+Grounding: 0.0422s
+Cycle breaking: 0.0002s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0177s
+Grounding: 0.0334s
+Cycle breaking: 0.0005s
+Clark's completion: 0.0001s
+DSharp compilation: 0.0121s
+Grounding: 0.0509s
+Cycle breaking: 0.0001s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0162s
+Grounding: 0.0412s
+Cycle breaking: 0.0030s
+Clark's completion: 0.0001s
+DSharp compilation: 0.0227s
+Grounding: 0.0236s
+Cycle breaking: 0.0002s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0539s
+Grounding: 0.0326s
+Cycle breaking: 0.0003s
+Clark's completion: 0.0001s
+DSharp compilation: 0.0163s
+Grounding: 0.0267s
+Cycle breaking: 0.0002s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0326s
+Grounding: 0.0151s
+Cycle breaking: 0.0001s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0206s
+Grounding: 0.0288s
+Cycle breaking: 0.0001s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0212s
+Grounding: 0.0344s
+Cycle breaking: 0.0003s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0160s
+Grounding: 0.0193s
+Cycle breaking: 0.0001s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0240s
+Grounding: 0.0056s
+Cycle breaking: 0.0002s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0355s
+Grounding: 0.0138s
+Cycle breaking: 0.0004s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0164s
+Grounding: 0.0106s
+Cycle breaking: 0.0002s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0138s
+Grounding: 0.0305s
+Cycle breaking: 0.0011s
+Clark's completion: 0.0001s
+DSharp compilation: 0.0218s
+Grounding: 0.0050s
+Cycle breaking: 0.0001s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0111s
+Grounding: 0.0055s
+Cycle breaking: 0.0001s
+Clark's completion: 0.0399s
+DSharp compilation: 0.0193s
+Grounding: 0.0311s
+Cycle breaking: 0.0006s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0144s
+Grounding: 0.0509s
+Cycle breaking: 0.0004s
+Clark's completion: 0.0001s
+DSharp compilation: 0.0150s
+Grounding: 0.0174s
+Cycle breaking: 0.0002s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0166s
+Grounding: 0.0238s
+Cycle breaking: 0.0005s
+Clark's completion: 0.0016s
+DSharp compilation: 0.0150s
+Grounding: 0.0068s
+Cycle breaking: 0.0001s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0122s
+Grounding: 0.0118s
+Cycle breaking: 0.0004s
+Clark's completion: 0.0001s
+DSharp compilation: 0.0493s
+Grounding: 0.0236s
+Cycle breaking: 0.0003s
+Clark's completion: 0.0002s
+DSharp compilation: 0.0129s
+Grounding: 0.0144s
+Cycle breaking: 0.0003s
+Clark's completion: 0.0001s
+DSharp compilation: 0.0716s
+Grounding: 0.0124s
+Cycle breaking: 0.0002s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0135s
+Grounding: 0.0150s
+Cycle breaking: 0.0002s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0231s
+Grounding: 0.0283s
+Cycle breaking: 0.0001s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0180s
+Grounding: 0.0217s
+Cycle breaking: 0.0012s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0215s
+Grounding: 0.0139s
+Cycle breaking: 0.0004s
+Clark's completion: 0.0003s
+DSharp compilation: 0.0148s
+Grounding: 0.0599s
+Cycle breaking: 0.0002s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0196s
+Grounding: 0.0084s
+Cycle breaking: 0.0010s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0316s
+Grounding: 0.0169s
+Cycle breaking: 0.0004s
+Clark's completion: 0.0001s
+DSharp compilation: 0.0210s
+Grounding: 0.0175s
+Cycle breaking: 0.0001s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0257s
+Grounding: 0.0183s
+Cycle breaking: 0.0003s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0188s
+Grounding: 0.0070s
+Cycle breaking: 0.0001s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0134s
+Grounding: 0.0103s
+Cycle breaking: 0.0003s
+Clark's completion: 0.0001s
+DSharp compilation: 0.0484s
+Grounding: 0.0812s
+Cycle breaking: 0.0001s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0117s
+Grounding: 0.0094s
+Cycle breaking: 0.0020s
+Clark's completion: 0.0001s
+DSharp compilation: 0.0216s
+Grounding: 0.0637s
+Cycle breaking: 0.0003s
+Clark's completion: 0.0003s
+DSharp compilation: 0.0179s
+Grounding: 0.0775s
+Cycle breaking: 0.0009s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0133s
+Grounding: 0.0124s
+Cycle breaking: 0.0001s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0166s
+Grounding: 0.0189s
+Cycle breaking: 0.0001s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0184s
+Grounding: 0.0205s
+Cycle breaking: 0.0002s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0670s
+Grounding: 0.0193s
+Cycle breaking: 0.0002s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0189s
+Grounding: 0.0116s
+Cycle breaking: 0.0004s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0405s
+Grounding: 0.0233s
+Cycle breaking: 0.0003s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0188s
+Grounding: 0.0139s
+Cycle breaking: 0.0001s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0500s
+Grounding: 0.0227s
+Cycle breaking: 0.0003s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0190s
+Grounding: 0.0175s
+Cycle breaking: 0.0001s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0192s
+Grounding: 0.0109s
+Cycle breaking: 0.0004s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0254s
+Grounding: 0.0056s
+Cycle breaking: 0.0001s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0168s
+Grounding: 0.0454s
+Cycle breaking: 0.0001s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0213s
+Grounding: 0.0123s
+Cycle breaking: 0.0001s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0135s
+Grounding: 0.0215s
+Cycle breaking: 0.0010s
+Clark's completion: 0.0008s
+DSharp compilation: 0.0177s
+Grounding: 0.0121s
+Cycle breaking: 0.0003s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0172s
+Grounding: 0.0363s
+Cycle breaking: 0.0003s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0180s
+Grounding: 0.0160s
+Cycle breaking: 0.0003s
+Clark's completion: 0.0023s
+DSharp compilation: 0.0740s
+Grounding: 0.0207s
+Cycle breaking: 0.0002s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0481s
+Grounding: 0.0704s
+Cycle breaking: 0.0001s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0124s
+Grounding: 0.0639s
+Cycle breaking: 0.0002s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0156s
+Grounding: 0.0365s
+Cycle breaking: 0.0001s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0158s
+Grounding: 0.0132s
+Cycle breaking: 0.0001s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0174s
+U 2 | F 004096 | FPS 0171 | D 24 | rR:μσmM -1.41 0.83 -5.81 0.13 | F:μσmM 10.2 9.5 1.0 49.0 | H 1.072 | V -0.747 | pL 0.536 | vL 0.419 | ∇ 0.542
+Grounding: 0.0125s
+Cycle breaking: 0.0003s
+Clark's completion: 0.0001s
+DSharp compilation: 0.0830s
+Grounding: 0.0117s
+Cycle breaking: 0.0007s
+Clark's completion: 0.0001s
+DSharp compilation: 0.0205s
+Grounding: 0.0382s
+Cycle breaking: 0.0001s
+Clark's completion: 0.0001s
+DSharp compilation: 0.0192s
+Grounding: 0.0273s
+Cycle breaking: 0.0009s
+Clark's completion: 0.0001s
+DSharp compilation: 0.0220s
+Grounding: 0.0223s
+Cycle breaking: 0.0001s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0199s
+Grounding: 0.0127s
+Cycle breaking: 0.0018s
+Clark's completion: 0.0001s
+DSharp compilation: 0.0177s
+Grounding: 0.0281s
+Cycle breaking: 0.0001s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0157s
+Grounding: 0.0191s
+Cycle breaking: 0.0001s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0198s
+Grounding: 0.0059s
+Cycle breaking: 0.0001s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0628s
+Grounding: 0.0161s
+Cycle breaking: 0.0001s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0272s
+Grounding: 0.0107s
+Cycle breaking: 0.0003s
+Clark's completion: 0.0003s
+DSharp compilation: 0.0222s
+Grounding: 0.0157s
+Cycle breaking: 0.0001s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0404s
+Grounding: 0.0058s
+Cycle breaking: 0.0001s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0185s
+Grounding: 0.0195s
+Cycle breaking: 0.0001s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0179s
+Grounding: 0.0253s
+Cycle breaking: 0.0003s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0366s
+Grounding: 0.0126s
+Cycle breaking: 0.0001s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0371s
+Grounding: 0.0286s
+Cycle breaking: 0.0002s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0174s
+Grounding: 0.0053s
+Cycle breaking: 0.0002s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0149s
+Grounding: 0.0117s
+Cycle breaking: 0.0001s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0193s
+Grounding: 0.0499s
+Cycle breaking: 0.0001s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0257s
+Grounding: 0.0164s
+Cycle breaking: 0.0002s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0205s
+Grounding: 0.0160s
+Cycle breaking: 0.0001s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0340s
+Grounding: 0.0234s
+Cycle breaking: 0.0004s
+Clark's completion: 0.0001s
+DSharp compilation: 0.0204s
+Grounding: 0.0188s
+Cycle breaking: 0.0001s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0147s
+Grounding: 0.0679s
+Cycle breaking: 0.0007s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0132s
+Grounding: 0.0192s
+Cycle breaking: 0.0008s
+Clark's completion: 0.0001s
+DSharp compilation: 0.0257s
+Grounding: 0.0174s
+Cycle breaking: 0.0007s
+Clark's completion: 0.0001s
+DSharp compilation: 0.0254s
+Grounding: 0.0093s
+Cycle breaking: 0.0001s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0179s
+Grounding: 0.0104s
+Cycle breaking: 0.0002s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0203s
+Grounding: 0.0520s
+Cycle breaking: 0.0009s
+Clark's completion: 0.0002s
+DSharp compilation: 0.0167s
+Grounding: 0.0147s
+Cycle breaking: 0.0001s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0208s
+Grounding: 0.0145s
+Cycle breaking: 0.0001s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0160s
+Grounding: 0.0204s
+Cycle breaking: 0.0001s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0182s
+Grounding: 0.0127s
+Cycle breaking: 0.0004s
+Clark's completion: 0.0027s
+DSharp compilation: 0.0371s
+Grounding: 0.0099s
+Cycle breaking: 0.0001s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0406s
+Grounding: 0.0335s
+Cycle breaking: 0.0002s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0284s
+Grounding: 0.0302s
+Cycle breaking: 0.0002s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0256s
+Grounding: 0.0213s
+Cycle breaking: 0.0001s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0222s
+Grounding: 0.0114s
+Cycle breaking: 0.0005s
+Clark's completion: 0.0001s
+DSharp compilation: 0.0563s
+Grounding: 0.0222s
+Cycle breaking: 0.0001s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0162s
+Grounding: 0.0071s
+Cycle breaking: 0.0002s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0149s
+Grounding: 0.0618s
+Cycle breaking: 0.0001s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0130s
+Grounding: 0.0110s
+Cycle breaking: 0.0003s
+Clark's completion: 0.0001s
+DSharp compilation: 0.0489s
+Grounding: 0.0304s
+Cycle breaking: 0.0007s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0143s
+Grounding: 0.0089s
+Cycle breaking: 0.0002s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0145s
+Grounding: 0.0242s
+Cycle breaking: 0.0007s
+Clark's completion: 0.0001s
+DSharp compilation: 0.0461s
+Grounding: 0.0056s
+Cycle breaking: 0.0001s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0215s
+Grounding: 0.0312s
+Cycle breaking: 0.0001s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0173s
+Grounding: 0.0244s
+Cycle breaking: 0.0010s
+Clark's completion: 0.0001s
+DSharp compilation: 0.0153s
+Grounding: 0.0128s
+Cycle breaking: 0.0004s
+Clark's completion: 0.0001s
+DSharp compilation: 0.0423s
+Grounding: 0.0132s
+Cycle breaking: 0.0006s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0231s
+Grounding: 0.0203s
+Cycle breaking: 0.0001s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0190s
+Grounding: 0.0219s
+Cycle breaking: 0.0006s
+Clark's completion: 0.0001s
+DSharp compilation: 0.0300s
+Grounding: 0.0406s
+Cycle breaking: 0.0004s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0221s
+Grounding: 0.0051s
+Cycle breaking: 0.0001s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0400s
+Grounding: 0.0145s
+Cycle breaking: 0.0002s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0203s
+Grounding: 0.0261s
+Cycle breaking: 0.0004s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0158s
+Grounding: 0.0143s
+Cycle breaking: 0.0001s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0186s
+Grounding: 0.0132s
+Cycle breaking: 0.0002s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0423s
+Grounding: 0.0130s
+Cycle breaking: 0.0001s
+Clark's completion: 0.0072s
+DSharp compilation: 0.0456s
+Grounding: 0.0240s
+Cycle breaking: 0.0001s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0306s
+Grounding: 0.0482s
+Cycle breaking: 0.0001s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0178s
+Grounding: 0.0160s
+Cycle breaking: 0.0006s
+Clark's completion: 0.0001s
+DSharp compilation: 0.0222s
+Grounding: 0.0823s
+Cycle breaking: 0.0001s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0129s
+Grounding: 0.0530s
+Cycle breaking: 0.0001s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0168s
+Grounding: 0.0224s
+Cycle breaking: 0.0002s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0165s
+Grounding: 0.0338s
+Cycle breaking: 0.0001s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0747s
+Grounding: 0.0060s
+Cycle breaking: 0.0001s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0119s
+Grounding: 0.0195s
+Cycle breaking: 0.0001s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0232s
+Grounding: 0.0200s
+Cycle breaking: 0.0010s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0268s
+Grounding: 0.0075s
+Cycle breaking: 0.0007s
+Clark's completion: 0.0001s
+DSharp compilation: 0.0196s
+Grounding: 0.0141s
+Cycle breaking: 0.0004s
+Clark's completion: 0.0001s
+DSharp compilation: 0.0350s
+Grounding: 0.0227s
+Cycle breaking: 0.0001s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0358s
+Grounding: 0.0117s
+Cycle breaking: 0.0004s
+Clark's completion: 0.0001s
+DSharp compilation: 0.0584s
+Grounding: 0.0266s
+Cycle breaking: 0.0003s
+Clark's completion: 0.0001s
+DSharp compilation: 0.0166s
+Grounding: 0.0391s
+Cycle breaking: 0.0003s
+Clark's completion: 0.0001s
+DSharp compilation: 0.0201s
+Grounding: 0.0106s
+Cycle breaking: 0.0006s
+Clark's completion: 0.0001s
+DSharp compilation: 0.0732s
+Grounding: 0.0174s
+Cycle breaking: 0.0001s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0171s
+Grounding: 0.0083s
+Cycle breaking: 0.0007s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0451s
+Grounding: 0.0306s
+Cycle breaking: 0.0004s
+Clark's completion: 0.0001s
+DSharp compilation: 0.0189s
+Grounding: 0.0169s
+Cycle breaking: 0.0003s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0175s
+Grounding: 0.0315s
+Cycle breaking: 0.0001s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0178s
+Grounding: 0.0148s
+Cycle breaking: 0.0002s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0162s
+Grounding: 0.0430s
+Cycle breaking: 0.0001s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0163s
+Grounding: 0.0324s
+Cycle breaking: 0.0003s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0171s
+Grounding: 0.0446s
+Cycle breaking: 0.0001s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0214s
+Grounding: 0.0592s
+Cycle breaking: 0.0001s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0237s
+Grounding: 0.0587s
+Cycle breaking: 0.0014s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0201s
+Grounding: 0.0056s
+Cycle breaking: 0.0002s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0186s
+Grounding: 0.0414s
+Cycle breaking: 0.0007s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0187s
+Grounding: 0.0069s
+Cycle breaking: 0.0001s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0217s
+Grounding: 0.0068s
+Cycle breaking: 0.0001s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0210s
+Grounding: 0.0131s
+Cycle breaking: 0.0071s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0778s
+Grounding: 0.0253s
+Cycle breaking: 0.0001s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0488s
+Grounding: 0.0437s
+Cycle breaking: 0.0002s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0200s
+Grounding: 0.0285s
+Cycle breaking: 0.0008s
+Clark's completion: 0.0001s
+DSharp compilation: 0.0159s
+Grounding: 0.0171s
+Cycle breaking: 0.0001s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0712s
+Grounding: 0.0238s
+Cycle breaking: 0.0001s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0112s
+Grounding: 0.0211s
+Cycle breaking: 0.0017s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0165s
+Grounding: 0.0053s
+Cycle breaking: 0.0001s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0461s
+Grounding: 0.0135s
+Cycle breaking: 0.0002s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0417s
+Grounding: 0.0163s
+Cycle breaking: 0.0004s
+Clark's completion: 0.0001s
+DSharp compilation: 0.0122s
+Grounding: 0.0109s
+Cycle breaking: 0.0003s
+Clark's completion: 0.0001s
+DSharp compilation: 0.0673s
+Grounding: 0.0153s
+Cycle breaking: 0.0044s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0183s
+Grounding: 0.0247s
+Cycle breaking: 0.0002s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0185s
+Grounding: 0.0078s
+Cycle breaking: 0.0040s
+Clark's completion: 0.0001s
+DSharp compilation: 0.0157s
+Grounding: 0.0156s
+Cycle breaking: 0.0002s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0299s
+Grounding: 0.0191s
+Cycle breaking: 0.0001s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0424s
+Grounding: 0.0144s
+Cycle breaking: 0.0002s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0247s
+Grounding: 0.0949s
+Cycle breaking: 0.0002s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0156s
+Grounding: 0.0131s
+Cycle breaking: 0.0002s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0132s
+Grounding: 0.0133s
+Cycle breaking: 0.0001s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0400s
+Grounding: 0.0127s
+Cycle breaking: 0.0002s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0179s
+Grounding: 0.0131s
+Cycle breaking: 0.0004s
+Clark's completion: 0.0055s
+DSharp compilation: 0.0563s
+U 3 | F 006144 | FPS 0170 | D 36 | rR:μσmM -1.40 0.93 -9.79 -0.91 | F:μσmM 9.4 8.9 1.0 59.0 | H 1.032 | V -0.977 | pL 0.403 | vL 0.400 | ∇ 0.708
+Grounding: 0.0161s
+Cycle breaking: 0.0002s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0415s
+Grounding: 0.0115s
+Cycle breaking: 0.0003s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0183s
+Grounding: 0.0148s
+Cycle breaking: 0.0001s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0293s
+Grounding: 0.0191s
+Cycle breaking: 0.0001s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0401s
+Grounding: 0.0081s
+Cycle breaking: 0.0001s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0141s
+Grounding: 0.0071s
+Cycle breaking: 0.0001s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0171s
+Grounding: 0.0258s
+Cycle breaking: 0.0009s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0163s
+Grounding: 0.0140s
+Cycle breaking: 0.0006s
+Clark's completion: 0.0005s
+DSharp compilation: 0.0170s
+Grounding: 0.0155s
+Cycle breaking: 0.0003s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0291s
+Grounding: 0.0168s
+Cycle breaking: 0.0001s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0209s
+Grounding: 0.0085s
+Cycle breaking: 0.0003s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0165s
+Grounding: 0.0171s
+Cycle breaking: 0.0001s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0391s
+Grounding: 0.0134s
+Cycle breaking: 0.0002s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0467s
+Grounding: 0.0178s
+Cycle breaking: 0.0002s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0686s
+Grounding: 0.0055s
+Cycle breaking: 0.0026s
+Clark's completion: 0.0002s
+DSharp compilation: 0.0208s
+Grounding: 0.0132s
+Cycle breaking: 0.0012s
+Clark's completion: 0.0007s
+DSharp compilation: 0.0385s
+Grounding: 0.0067s
+Cycle breaking: 0.0001s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0159s
+Grounding: 0.0223s
+Cycle breaking: 0.0001s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0300s
+Grounding: 0.0662s
+Cycle breaking: 0.0001s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0108s
+Grounding: 0.0084s
+Cycle breaking: 0.0001s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0114s
+Grounding: 0.0605s
+Cycle breaking: 0.0009s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0131s
+Grounding: 0.0110s
+Cycle breaking: 0.0022s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0661s
+Grounding: 0.0073s
+Cycle breaking: 0.0001s
+Clark's completion: 0.0008s
+DSharp compilation: 0.0154s
+Grounding: 0.0068s
+Cycle breaking: 0.0002s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0205s
+Grounding: 0.0130s
+Cycle breaking: 0.0013s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0167s
+Grounding: 0.0273s
+Cycle breaking: 0.0001s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0347s
+Grounding: 0.0086s
+Cycle breaking: 0.0001s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0274s
+Grounding: 0.0245s
+Cycle breaking: 0.0006s
+Clark's completion: 0.0001s
+DSharp compilation: 0.0439s
+Grounding: 0.0373s
+Cycle breaking: 0.0001s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0146s
+Grounding: 0.0054s
+Cycle breaking: 0.0002s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0436s
+Grounding: 0.0233s
+Cycle breaking: 0.0003s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0195s
+Grounding: 0.0396s
+Cycle breaking: 0.0006s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0148s
+Grounding: 0.0409s
+Cycle breaking: 0.0001s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0229s
+Grounding: 0.0392s
+Cycle breaking: 0.0001s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0188s
+Grounding: 0.0264s
+Cycle breaking: 0.0002s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0164s
+Grounding: 0.0155s
+Cycle breaking: 0.0001s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0128s
+Grounding: 0.0309s
+Cycle breaking: 0.0002s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0148s
+Grounding: 0.0555s
+Cycle breaking: 0.0001s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0149s
+Grounding: 0.0130s
+Cycle breaking: 0.0003s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0274s
+Grounding: 0.0304s
+Cycle breaking: 0.0001s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0154s
+Grounding: 0.0142s
+Cycle breaking: 0.0003s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0157s
+Grounding: 0.0048s
+Cycle breaking: 0.0001s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0106s
+Grounding: 0.0109s
+Cycle breaking: 0.0003s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0747s
+Grounding: 0.0553s
+Cycle breaking: 0.0002s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0168s
+Grounding: 0.0148s
+Cycle breaking: 0.0001s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0121s
+Grounding: 0.0545s
+Cycle breaking: 0.0002s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0138s
+Grounding: 0.0246s
+Cycle breaking: 0.0005s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0425s
+Grounding: 0.0267s
+Cycle breaking: 0.0004s
+Clark's completion: 0.0001s
+DSharp compilation: 0.0169s
+Grounding: 0.0095s
+Cycle breaking: 0.0001s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0467s
+Grounding: 0.0356s
+Cycle breaking: 0.0151s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0360s
+Grounding: 0.0327s
+Cycle breaking: 0.0028s
+Clark's completion: 0.0001s
+DSharp compilation: 0.0588s
+Grounding: 0.0105s
+Cycle breaking: 0.0016s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0437s
+Grounding: 0.0054s
+Cycle breaking: 0.0001s
+Clark's completion: 0.0000s
+DSharp compilation: 0.1007s
+Grounding: 0.0125s
+Cycle breaking: 0.0005s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0399s
+Grounding: 0.1005s
+Cycle breaking: 0.0007s
+Clark's completion: 0.0001s
+DSharp compilation: 0.0351s
+Grounding: 0.0122s
+Cycle breaking: 0.0013s
+Clark's completion: 0.0001s
+DSharp compilation: 0.0581s
+Grounding: 0.0713s
+Cycle breaking: 0.0014s
+Clark's completion: 0.0001s
+DSharp compilation: 0.0356s
+Grounding: 0.0170s
+Cycle breaking: 0.0009s
+Clark's completion: 0.0001s
+DSharp compilation: 0.0157s
+Grounding: 0.0313s
+Cycle breaking: 0.0001s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0643s
+Grounding: 0.0634s
+Cycle breaking: 0.0002s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0144s
+Grounding: 0.0805s
+Cycle breaking: 0.0027s
+Clark's completion: 0.0002s
+DSharp compilation: 0.0359s
+Grounding: 0.0372s
+Cycle breaking: 0.0007s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0243s
+Grounding: 0.0110s
+Cycle breaking: 0.0007s
+Clark's completion: 0.0001s
+DSharp compilation: 0.0183s
+Grounding: 0.0642s
+Cycle breaking: 0.0001s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0128s
+Grounding: 0.0125s
+Cycle breaking: 0.0001s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0399s
+Grounding: 0.0340s
+Cycle breaking: 0.0001s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0313s
+Grounding: 0.0388s
+Cycle breaking: 0.0003s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0249s
+Grounding: 0.0058s
+Cycle breaking: 0.0001s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0175s
+Grounding: 0.0289s
+Cycle breaking: 0.0003s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0161s
+Grounding: 0.0214s
+Cycle breaking: 0.0001s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0581s
+Grounding: 0.0361s
+Cycle breaking: 0.0004s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0165s
+Grounding: 0.0051s
+Cycle breaking: 0.0002s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0153s
+Grounding: 0.0059s
+Cycle breaking: 0.0002s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0277s
+Grounding: 0.0164s
+Cycle breaking: 0.0001s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0199s
+Grounding: 0.0105s
+Cycle breaking: 0.0006s
+Clark's completion: 0.0002s
+DSharp compilation: 0.0238s
+Grounding: 0.0365s
+Cycle breaking: 0.0003s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0177s
+Grounding: 0.0312s
+Cycle breaking: 0.0002s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0246s
+Grounding: 0.0553s
+Cycle breaking: 0.0002s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0167s
+Grounding: 0.0723s
+Cycle breaking: 0.0018s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0203s
+Grounding: 0.0145s
+Cycle breaking: 0.0001s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0172s
+Grounding: 0.0150s
+Cycle breaking: 0.0001s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0188s
+Grounding: 0.0216s
+Cycle breaking: 0.0001s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0502s
+Grounding: 0.0149s
+Cycle breaking: 0.0003s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0438s
+Grounding: 0.0435s
+Cycle breaking: 0.0001s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0144s
+Grounding: 0.0242s
+Cycle breaking: 0.0001s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0227s
+Grounding: 0.0427s
+Cycle breaking: 0.0001s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0151s
+Grounding: 0.0052s
+Cycle breaking: 0.0001s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0109s
+Grounding: 0.0157s
+Cycle breaking: 0.0003s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0466s
+Grounding: 0.0509s
+Cycle breaking: 0.0003s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0194s
+Grounding: 0.0204s
+Cycle breaking: 0.0001s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0165s
+Grounding: 0.0109s
+Cycle breaking: 0.0007s
+Clark's completion: 0.0001s
+DSharp compilation: 0.0438s
+Grounding: 0.0151s
+Cycle breaking: 0.0001s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0186s
+Grounding: 0.0074s
+Cycle breaking: 0.0005s
+Clark's completion: 0.0001s
+DSharp compilation: 0.0251s
+Grounding: 0.0119s
+Cycle breaking: 0.0001s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0323s
+Grounding: 0.0252s
+Cycle breaking: 0.0002s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0156s
+Grounding: 0.0147s
+Cycle breaking: 0.0001s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0212s
+Grounding: 0.0123s
+Cycle breaking: 0.0002s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0419s
+Grounding: 0.0160s
+Cycle breaking: 0.0001s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0197s
+Grounding: 0.0115s
+Cycle breaking: 0.0001s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0192s
+Grounding: 0.0093s
+Cycle breaking: 0.0001s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0173s
+Grounding: 0.0106s
+Cycle breaking: 0.0005s
+Clark's completion: 0.0001s
+DSharp compilation: 0.0310s
+Grounding: 0.0123s
+Cycle breaking: 0.0003s
+Clark's completion: 0.0001s
+DSharp compilation: 0.0458s
+Grounding: 0.0165s
+Cycle breaking: 0.0006s
+Clark's completion: 0.0001s
+DSharp compilation: 0.0183s
+Grounding: 0.0230s
+Cycle breaking: 0.0001s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0175s
+Grounding: 0.0111s
+Cycle breaking: 0.0002s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0291s
+Grounding: 0.0052s
+Cycle breaking: 0.0001s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0212s
+Grounding: 0.0458s
+Cycle breaking: 0.0002s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0153s
+Grounding: 0.0267s
+Cycle breaking: 0.0017s
+Clark's completion: 0.0001s
+DSharp compilation: 0.0205s
+Grounding: 0.0436s
+Cycle breaking: 0.0001s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0109s
+Grounding: 0.0173s
+Cycle breaking: 0.0002s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0212s
+Grounding: 0.0085s
+Cycle breaking: 0.0003s
+Clark's completion: 0.0001s
+DSharp compilation: 0.0513s
+Grounding: 0.0063s
+Cycle breaking: 0.0001s
+Clark's completion: 0.0008s
+DSharp compilation: 0.0173s
+Grounding: 0.0108s
+Cycle breaking: 0.0002s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0179s
+Grounding: 0.0053s
+Cycle breaking: 0.0001s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0185s
+Grounding: 0.0225s
+Cycle breaking: 0.0001s
+Clark's completion: 0.0000s
+DSharp compilation: 0.0173s
+U 4 | F 008192 | FPS 0146 | D 50 | rR:μσmM -1.27 0.62 -4.98 0.03 | F:μσmM 7.6 7.5 1.0 56.0 | H 0.988 | V -1.142 | pL 0.138 | vL 0.207 | ∇ 0.361
