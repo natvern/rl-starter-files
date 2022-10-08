@@ -9,6 +9,18 @@ import utils
 from utils import device
 from model import ACModel
 
+import csv
+
+
+sys.path.append('../')
+import dio.prologkb.config as config
+
+
+import matplotlib.pyplot as plt
+import seaborn as sns
+import matplotlib.patches as mpatches
+import pandas
+
 
 # Parse arguments
 if __name__ == '__main__':
@@ -40,8 +52,8 @@ if __name__ == '__main__':
                         help="batch size for PPO (default: 256)")
     parser.add_argument("--frames-per-proc", type=int, default=None,
                         help="number of frames per process before update (default: 5 for A2C and 128 for PPO)")
-    parser.add_argument("--discount", type=float, default=0.99,
-                        help="discount factor (default: 0.99)")
+    parser.add_argument("--discount", type=float, default=0.5,
+                        help="discount factor (default: 0.5)")
     parser.add_argument("--lr", type=float, default=0.001,
                         help="learning rate (default: 0.001)")
     parser.add_argument("--gae-lambda", type=float, default=0.95,
@@ -144,9 +156,23 @@ if __name__ == '__main__':
 
     # Train model
 
+    ## Create log file of rewards per frame
+    f = open("../prologkb/csv_files/" + config.config.currentFile+".csv", 'w')
+    writer = csv.writer(f)
+    writer.writerow(["Episode", "Cumulative"]) # HEADER
+
+    ## Create succ/fail/exhaust count file
+    # f1 = open(config.currentFile+"_sfe.csv", "w")
+    # writer1 = csv.writer(f1)
+    # writer1.writerow(["Success", "Failures", "Exhaustions"])
+
     num_frames = status["num_frames"]
     update = status["update"]
     start_time = time.time()
+
+    cumulative_reward = 0
+    episodes = []
+    num_episodes = 0
 
     while num_frames < args.frames:
         # Update model parameters
@@ -163,6 +189,7 @@ if __name__ == '__main__':
         # Print logs
 
         if update % args.log_interval == 0:
+            
             fps = logs["num_frames"]/(update_end_time - update_start_time)
             duration = int(time.time() - start_time)
             return_per_episode = utils.synthesize(logs["return_per_episode"])
@@ -181,6 +208,13 @@ if __name__ == '__main__':
             txt_logger.info(
                 "U {} | F {:06} | FPS {:04.0f} | D {} | rR:μσmM {:.2f} {:.2f} {:.2f} {:.2f} | F:μσmM {:.1f} {:.1f} {} {} | H {:.3f} | V {:.3f} | pL {:.3f} | vL {:.3f} | ∇ {:.3f}"
                 .format(*data))
+
+            episode = num_frames/num_frames_per_episode["mean"]
+            cumulative_reward += return_per_episode["mean"]
+
+            num_episodes += episode
+
+            writer.writerow([new_episodes, cumulative_reward])
 
             header += ["return_" + key for key in return_per_episode.keys()]
             data += return_per_episode.values()
@@ -202,3 +236,11 @@ if __name__ == '__main__':
                 status["vocab"] = preprocess_obss.vocab.vocab
             utils.save_status(status, model_dir)
             txt_logger.info("Status saved")
+
+    f.close()
+
+    l = config.count()
+
+    print("Success = " + str(l[0]))
+    print("Failure = " + str(l[1]))
+    print("Exhaustions = " + str(l[2]))

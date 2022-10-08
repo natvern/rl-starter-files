@@ -1,4 +1,5 @@
 import argparse
+from sre_constants import SUCCESS
 import time
 import torch
 from torch_ac.utils.penv import ParallelEnv
@@ -6,6 +7,8 @@ from torch_ac.utils.penv import ParallelEnv
 import utils
 from utils import device
 
+import sys
+from prologkb.config import config
 
 # Parse arguments
 if __name__ == '__main__':
@@ -85,7 +88,7 @@ if __name__ == '__main__':
                 log_done_counter += 1
                 if (log_episode_return[i] > 0):
                     suc += 1
-                if (log_episode_num_frames[i].item() >= 100):
+                if (log_episode_num_frames[i].item() >= config.max_steps):
                     exhaust += 1
                 elif (log_episode_return[i].item() < 0):
                     failure += 1
@@ -122,8 +125,5 @@ if __name__ == '__main__':
             print("- episode {}: R={}, F={}".format(i, logs["return_per_episode"][i], logs["num_frames_per_episode"][i]))
     
     print("\n Failure " + str(failure)) 
-    print("\n Percentage: " + str(failure / args.episodes)) 
     print("\n Exhaust " + str(exhaust)) 
-    print("\n Percentage: " + str(exhaust / args.episodes)) 
     print("\n Success " + str(suc)) 
-    print("\n Percentage: " + str(suc / args.episodes)) 
