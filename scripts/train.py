@@ -214,7 +214,7 @@ if __name__ == '__main__':
 
             num_episodes += episode
 
-            writer.writerow([new_episodes, cumulative_reward])
+            writer.writerow([num_episodes, cumulative_reward])
 
             header += ["return_" + key for key in return_per_episode.keys()]
             data += return_per_episode.values()
