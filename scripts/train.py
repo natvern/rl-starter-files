@@ -157,14 +157,9 @@ if __name__ == '__main__':
     # Train model
 
     ## Create log file of rewards per frame
-    f = open("../prologkb/csv_files/" + config.config.currentFile+".csv", 'w')
+    f = open("../prologkb/cumulative_rewards/" + config.config.currentFile+".csv", 'w')
     writer = csv.writer(f)
     writer.writerow(["Episode", "Cumulative"]) # HEADER
-
-    ## Create succ/fail/exhaust count file
-    # f1 = open(config.currentFile+"_sfe.csv", "w")
-    # writer1 = csv.writer(f1)
-    # writer1.writerow(["Success", "Failures", "Exhaustions"])
 
     num_frames = status["num_frames"]
     update = status["update"]
