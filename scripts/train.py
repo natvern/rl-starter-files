@@ -14,6 +14,7 @@ import csv
 
 sys.path.append('../')
 import dio.prologkb.config as config
+import dio.prologkb.email as email
 
 
 import matplotlib.pyplot as plt
@@ -221,3 +222,6 @@ if __name__ == '__main__':
     print("Success = " + str(l[0]))
     print("Failure = " + str(l[1]))
     print("Exhaustions = " + str(l[2]))
+
+    email.send(config.config.alpha, l)
+
