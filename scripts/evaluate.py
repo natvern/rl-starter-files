@@ -8,7 +8,7 @@ import utils
 from utils import device
 
 import sys
-from prologkb.config import config
+from dio.prologkb.config import config
 
 # Parse arguments
 if __name__ == '__main__':
