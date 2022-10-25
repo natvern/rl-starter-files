@@ -156,18 +156,9 @@ if __name__ == '__main__':
 
     # Train model
 
-    ## Create log file of rewards per frame
-    f = open("../prologkb/cumulative_rewards/" + config.config.currentFile+".csv", 'w')
-    writer = csv.writer(f)
-    writer.writerow(["Episode", "Cumulative"]) # HEADER
-
     num_frames = status["num_frames"]
     update = status["update"]
     start_time = time.time()
-
-    cumulative_reward = 0
-    episodes = []
-    num_episodes = 0
 
     while num_frames < args.frames:
         # Update model parameters
@@ -204,13 +195,6 @@ if __name__ == '__main__':
                 "U {} | F {:06} | FPS {:04.0f} | D {} | rR:μσmM {:.2f} {:.2f} {:.2f} {:.2f} | F:μσmM {:.1f} {:.1f} {} {} | H {:.3f} | V {:.3f} | pL {:.3f} | vL {:.3f} | ∇ {:.3f}"
                 .format(*data))
 
-            episode = num_frames/num_frames_per_episode["mean"]
-            cumulative_reward += return_per_episode["mean"]
-
-            num_episodes += episode
-
-            writer.writerow([num_episodes, cumulative_reward])
-
             header += ["return_" + key for key in return_per_episode.keys()]
             data += return_per_episode.values()
 
@@ -231,8 +215,6 @@ if __name__ == '__main__':
                 status["vocab"] = preprocess_obss.vocab.vocab
             utils.save_status(status, model_dir)
             txt_logger.info("Status saved")
-
-    f.close()
 
     l = config.count()
 
